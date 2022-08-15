@@ -20,8 +20,32 @@
 
 
 //Prototypes:
+/**
+ * @brief Draw a straight vertical or horizontal line in a curses instace
+ * @param beginRow coordinate of line's begining row
+ * @param beginCol coordinate of line's beginning column
+ * @param length how long the line will be
+ * @param isHorizontal determines horizontal or vertical line
+ * @return void
+ * @pre beginRow !> 23 && beginCol !> 79
+ * @post will draw a line - all parameters will remain unchnged
+ */
 void drawLine(int beginRow, int beginCol, int length, int isHorizontal); //Draws line of length "length" starting from beginRow, beginCol
+
+/**
+ * @brief sign the curses window
+ * @return void
+ * @pre no condition
+ * @post will sign curses window starting at (20, 5)
+ */
 void signWork();    //Signs work with "Created with Curses by David Petzold"
+
+/**
+ * @brief draws initials on curses window
+ * @return void
+ * @pre none
+ * @post none
+ */
 void initials();    //Draws my initials
 
 // Put Your Main Function Here
@@ -29,8 +53,6 @@ int main(void){
 
     int artDecision;
     int startX, startY, length, horizontality; //If the line is horizontal == 1...if it is vertical == 0
-
-
 
     //Let user decide what type of 'art' they would like to see...
     printf("What type of \"art\" would you like to see today? Press 1 to draw a singular line or press 2 to see my initials: ");
@@ -58,7 +80,7 @@ int main(void){
         drawLine(startX, startY, length, horizontality);
         signWork();
 
-    } else if (artDecision == 2){
+    } else if (artDecision == 2) {
 
         //Start Curses
         initscr();
