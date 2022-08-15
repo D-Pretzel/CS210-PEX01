@@ -5,7 +5,7 @@
  * Project:  PEX 1
  * Purpose:  Utilizes the Curses Library to create and edit a program in order to understand
 *            the basics of user-defined methods and calls.
- * Documentation Statement:  Referenced the PEX1 assignment sheet & "Curses Reference Guide.pdf"
+ * Documentation Statement:  Referenced the PEX1 assignment sheet, "Curses Reference Guide.pdf", and the DFCS C Programming Standards
  * ============================================================= */
 
 //! Note to self: (0, 0) is the top left - window size is 23 (R) x 79 (C)
