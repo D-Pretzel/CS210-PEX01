@@ -15,18 +15,23 @@
 
 
 //Prototypes:
-void drawLine(int beginRow, int beginCol, int length, bool horizontal); //Draws line of length "length" starting from beginRow, beginCol
-void signWork();    //Signs work with "Created with Curses by David Petzold" & waits for terminating keystroke
+void drawLine(int beginRow, int beginCol, int length, bool isHorizontal); //Draws line of length "length" starting from beginRow, beginCol
+void signWork();    //Signs work with "Created with Curses by David Petzold"
 
 
 // Put Your Main Function Here
 int main(void){
 
-    initscr();  //! Required by curses
+    initscr();  //! Required by curses to initialize
 
-    //Some bullshit
+    //Some bullshit here...
 
-    endwin();   //! Required by curses
+    //Wait for keystroke then end
+    move(23, 10);
+    printw("Press a key to continue: ");
+    getch();
+
+    endwin();   //! Required by curses to close
 
     return 0;
 }
