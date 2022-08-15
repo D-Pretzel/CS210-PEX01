@@ -8,26 +8,27 @@
  * Documentation Statement:  Referenced the PEX1 assignment sheet & "Curses Reference Guide.pdf"
  * ============================================================= */
 
+//! Note to self: (0, 0) is the top left
+
 // Include the Curses library
 #include <ncurses.h>
 
 
-// Put Your Drawing Functions Here
+//Prototypes:
+void drawLine(int beginRow, int beginCol, int length, bool horizontal); //Draws line of length "length" starting from beginRow, beginCol
+void signWork();    //Signs work with "Created with Curses by David Petzold" & waits for terminating keystroke
 
-// Remember that at least one must use parameters
 
 // Put Your Main Function Here
 int main(void){
 
-    initscr();
+    initscr();  //! Required by curses
 
-    move(23, 10);
-    printw("press a key to continue");
-    getch();
+    //Some bullshit
 
-    endwin();
+    endwin();   //! Required by curses
 
     return 0;
 }
 
-
+//Method definitions:
