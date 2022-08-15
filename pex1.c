@@ -136,7 +136,9 @@ void signWork(){
     printw("Creaded with Curses by David Petzold.\n");
 }
 
-void iniitals(){
+void initials(){
+
+    attron(WHITE_BLUE);
     move(5, 5);
     printw(" ");
 
@@ -165,7 +167,8 @@ void iniitals(){
     printw(" ");
 
     for (int i = 0; i < 5; i++) {
-        move(5 - i, 10);
+        move(5, 10 - i);
         printw(" ");
     }
+    attroff(WHITE_BLUE);
 }
