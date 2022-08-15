@@ -55,7 +55,7 @@ int main(void){
     int startX, startY, length, horizontality; //If the line is horizontal == 1...if it is vertical == 0
 
     //Let user decide what type of 'art' they would like to see...
-    printf("What type of \"art\" would you like to see today? Press 1 to draw a singular line or press 2 to see my initials: ");
+    printf("What type of \"art\" would you like to see today? Press 1 to draw a singular line or press 2 to see my first initial: ");
     scanf("%i", &artDecision);
 
     if (artDecision == 1){
@@ -91,14 +91,11 @@ int main(void){
         init_pair(WHITE_BLUE, COLOR_WHITE, COLOR_BLUE);
         wbkgd(stdscr, COLOR_PAIR(BLACK_WHITE));
 
-        //Draw the user's line and sign the work
-        drawLine(startX, startY, length, horizontality);
+        //Draw my first initial and sign the work
+        initials();
         signWork();
 
     }
-
-    //Start curses
-
 
     //Wait for keystroke then end
     move(23, 5);
@@ -137,4 +134,38 @@ void drawLine(int beginRow, int beginCol, int length, int isHorizontal){
 void signWork(){
     move(20, 5);
     printw("Creaded with Curses by David Petzold.\n");
+}
+
+void iniitals(){
+    move(5, 5);
+    printw(" ");
+
+    for (int i = 0; i < 10; i++) {
+        move(5 + i, 5);
+        printw(" ");
+    }
+
+    move(15, 5);
+    printw(" ");
+
+    for (int i = 0; i < 5; i++) {
+        move(15, 5 + i);
+        printw(" ");
+    }
+
+    move(15, 10);
+    printw(" ");
+
+    for (int i = 0; i < 10; i++) {
+        move(15 - i, 10);
+        printw(" ");
+    }
+
+    move(5, 10);
+    printw(" ");
+
+    for (int i = 0; i < 5; i++) {
+        move(5 - i, 10);
+        printw(" ");
+    }
 }
